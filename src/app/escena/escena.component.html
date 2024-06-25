@@ -1,0 +1,49 @@
+<div class="escena-container">
+  @for (step of steps; track $index) {
+    @if (currentStep === steps.indexOf(step)) {
+      <div class="step active">
+        <div class="step-header" [ngStyle]="{'background-color': step.bgcolor}">
+          <img [src]="step.img" alt="{{step.title}}" class="step-image">
+        </div>
+        <div class="step-body">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+
+          <div class="navigation-buttons">
+            @for ( i of [0, 1, 2]; track $index) {
+              <button (click)="selectStep(i)" class="nav-button" [class.active]="currentStep === i">
+                @if (currentStep !== i) {
+                  <span class="nav-dot"></span>
+                } @else {
+                  <span class="nav-line"></span>
+                }
+              </button>
+            }
+          </div>
+        </div>
+        
+        <div class="step-buttons">
+          @if (currentStep !== 0) {
+            <button (click)="prevStep()" [disabled]="currentStep === 0">
+              @if (currentStep === 1 || currentStep === 2) {
+                <img src="assets/img/arrowleftnofill.svg" alt="Back">
+              }
+            </button>
+          }
+          @if (currentStep !== steps.length - 1) {
+            <button (click)="nextStep()" [disabled]="currentStep === steps.length - 1">
+              @if (currentStep === 0 || currentStep === 1) {
+                <img src="assets/img/arrowright.svg" alt="Next">
+              }
+            </button>
+          }
+        </div>
+        </div>
+      }
+        }
+        <div class="indicators">
+          @for (step of steps; track $index) {
+            <span (click)="selectStep(steps.indexOf(step))" [class.active]="steps.indexOf(step) === currentStep" class="indicator"></span>
+          }
+        </div>
+        

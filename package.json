@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "watch:sass": "sass --watch src/app:src/app --style compressed"
   },
   "private": true,
   "dependencies": {
