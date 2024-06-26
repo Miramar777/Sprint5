@@ -3,7 +3,7 @@ export interface iStep {
     description: string;
     img: string;
     bgcolor: string;
-    icon: string;
+   
   }
 
   

@@ -16,7 +16,7 @@
     height: 400%;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     transition: transform 0.3s ease;
-    text-align: center;
+    text-align: start;
 
     .step-header {
       border-radius: 0.25rem 0.25rem 0 0;
@@ -67,10 +67,10 @@
           }
 
           .nav-line {
-            width: 20px;
+            width: 25px;
             height: 5px;
             background-color: black;
-            border-radius: 2.5px;
+            border-radius: 5px;
             display: inline-block;
             margin-top: -5px; /* Elevate the line */
           }
